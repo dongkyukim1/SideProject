@@ -1,0 +1,46 @@
+spring:
+  datasource:
+  # url: jdbc:postgresql://localhost:5432/airesume
+  # username: postgres
+  # password: password
+
+  jpa:
+    hibernate:
+    # ddl-auto: update
+    # show-sql: true
+    properties:
+      hibernate:
+      # format_sql: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${747814009246-7psakbibp56lhfdbm8p13kpri0lrccj9.apps.googleusercontent.com}
+            client-secret: ${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}
+            scope:
+              - email
+              - profile
+          github:
+            client-id: ${GITHUB_CLIENT_ID}
+            client-secret: ${GITHUB_CLIENT_SECRET}
+            scope:
+              - user:email
+              - read:user
+
+openai:
+  api:
+    key: ${OPENAI_API_KEY:default-api-key}
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400000 # 24시간
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs

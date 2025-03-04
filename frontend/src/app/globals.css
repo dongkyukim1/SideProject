@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 부트스트랩 스타일 임포트 */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+}
+
+/* 커스텀 유틸리티 클래스 */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white font-semibold py-2 px-4 rounded hover:bg-gray-600 transition-colors;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden;
+  }
+  
+  .card-header {
+    @apply p-4 border-b border-gray-200 dark:border-gray-700 font-semibold;
+  }
+  
+  .card-body {
+    @apply p-4;
+  }
+  
+  .form-control {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+  font-family: var(--font-geist);
+}
+
