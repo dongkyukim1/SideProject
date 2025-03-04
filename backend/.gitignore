@@ -60,3 +60,4 @@ logs/
 # 운영체제 파일
 .DS_Store
 Thumbs.db
+/src/main/resources/application.yml
